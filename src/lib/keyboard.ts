@@ -1,3 +1,3 @@
-import { CharValue } from './statuses'
+import { UrduCharValue } from './statuses'
 
-export type KeyValue = CharValue | 'ENTER' | 'DELETE'
+export type KeyValue = UrduCharValue | 'ENTER' | 'DELETE'
