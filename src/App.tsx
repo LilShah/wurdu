@@ -11,6 +11,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
+import { WORDS } from './constants/wordlist'
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -33,9 +34,9 @@ import './App.css'
 const ALERT_TIME_MS = 2000
 
 function App() {
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
+  // const prefersDarkMode = window.matchMedia(
+  //   '(prefers-color-scheme: dark)'
+  // ).matches
 
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
@@ -46,11 +47,12 @@ function App() {
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('theme')
-      ? localStorage.getItem('theme') === 'dark'
-      : prefersDarkMode
-      ? true
-      : false
+    // localStorage.getItem('theme')
+    //   ? localStorage.getItem('theme') === 'dark'
+    //   : prefersDarkMode
+    //   ? true
+    //   : false
+    true
   )
   const [successAlert, setSuccessAlert] = useState('')
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -164,7 +166,7 @@ function App() {
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
-        {isDarkMode ? (
+        {/* {isDarkMode ? (
           <SunIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
             onClick={() => handleDarkMode(!isDarkMode)}
@@ -174,7 +176,7 @@ function App() {
             className="h-6 w-6 mr-2 cursor-pointer"
             onClick={() => handleDarkMode(!isDarkMode)}
           />
-        )}
+        )} */}
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
