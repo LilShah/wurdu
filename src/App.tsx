@@ -1,9 +1,4 @@
-import {
-  InformationCircleIcon,
-  ChartBarIcon,
-  SunIcon,
-  MoonIcon,
-} from '@heroicons/react/outline'
+import { InformationCircleIcon, ChartBarIcon } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { Grid } from './components/grid/Grid'
@@ -11,7 +6,6 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
-import { WORDS } from './constants/wordlist'
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -49,14 +43,15 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(
-    // localStorage.getItem('theme')
-    //   ? localStorage.getItem('theme') === 'dark'
-    //   : prefersDarkMode
-    //   ? true
-    //   : false
-    true
-  )
+  // const [isDarkMode, setIsDarkMode] = useState(
+  // localStorage.getItem('theme')
+  //   ? localStorage.getItem('theme') === 'dark'
+  //   : prefersDarkMode
+  //   ? true
+  //   : false
+  // true
+  // )
+  const isDarkMode = true
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -84,10 +79,10 @@ function App() {
     }
   }, [isDarkMode])
 
-  const handleDarkMode = (isDark: boolean) => {
-    setIsDarkMode(isDark)
-    localStorage.setItem('theme', isDark ? 'dark' : 'light')
-  }
+  // const handleDarkMode = (isDark: boolean) => {
+  //   setIsDarkMode(isDark)
+  //   localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  // }
 
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
