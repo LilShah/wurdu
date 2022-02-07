@@ -1,4 +1,3 @@
-import { KeyValue } from '../../lib/keyboard'
 import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
@@ -9,12 +8,19 @@ type Props = {
   onDelete: () => void
   onEnter: () => void
   guesses: string[]
+  isRevealing?: boolean
 }
 
-export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
+export const Keyboard = ({
+  onChar,
+  onDelete,
+  onEnter,
+  guesses,
+  isRevealing,
+}: Props) => {
   const charStatuses = getStatuses(guesses)
 
-  const onClick = (value: KeyValue) => {
+  const onClick = (value: string) => {
     if (value === 'ENTER') {
       onEnter()
     } else if (value === 'DELETE') {
@@ -95,6 +101,15 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
         <Key value="م" onClick={onClick} status={charStatuses['م']} />
         <Key value="ل" onClick={onClick} status={charStatuses['ل']} />
         <Key value="گ" onClick={onClick} status={charStatuses['گ']} />
+        {['Z', 'X', 'C', 'V', 'B', 'N', 'M'].map((key) => (
+          <Key
+            value={key}
+            key={key}
+            onClick={onClick}
+            status={charStatuses[key]}
+            isRevealing={isRevealing}
+          />
+        ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
           {DELETE_TEXT}
         </Key>
