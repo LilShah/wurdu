@@ -22,3 +22,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/constants/filtered.txt
+src/constants/filter.py
+src/constants/words.txt
