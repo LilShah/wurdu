@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wurdu/static/css/main.93be2bfa.css",
+    "main.js": "/wurdu/static/js/main.e373884f.js",
+    "static/js/787.2a3fd6d0.chunk.js": "/wurdu/static/js/787.2a3fd6d0.chunk.js",
+    "index.html": "/wurdu/index.html",
+    "main.93be2bfa.css.map": "/wurdu/static/css/main.93be2bfa.css.map",
+    "main.e373884f.js.map": "/wurdu/static/js/main.e373884f.js.map",
+    "787.2a3fd6d0.chunk.js.map": "/wurdu/static/js/787.2a3fd6d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93be2bfa.css",
+    "static/js/main.e373884f.js"
+  ]
+}
